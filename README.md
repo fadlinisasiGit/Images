@@ -64,16 +64,20 @@ Berikut adalah keterangan mengenai maksud dari variabel - variabel atau kolom da
 Dalam Proyek ini, terdapat beberapa bentuk visualisasi data yang diberikan, seperti penggunaan sns.boxplot untuk mengetahui adanya outliers atau data yang berada di luar batas atas dan batas bawah data sehingga bisa diatasi nantinya menggunakan Metode IQR.
 ![images](https://github.com/fadlinisasiGit/Images/blob/main/sns%20boxplot%20collegeGPA.png?raw=true).
 
+
 Selain menggunakan sns.bloxplot, saya juga menggunakan visualisasi data berupa count.plot.
 ![images](https://github.com/fadlinisasiGit/Images/blob/main/countplot%20specialization.png?raw=true).
 
 Seperti pada gambar diatas, visualisasi data menunjukkan banyaknya jumlah sampel dan persentase pada fitur kategori Specialization. Ini menunjukkan banyaknya spesialisasi kerja lulusan teknik di India.
 
+
 Selain itu, saya menggunakan teknik sns.catplot untuk mempertimbangkan Fitur Salary dengan fitur kategorikal, 
 ![images](https://github.com/fadlinisasiGit/Images/blob/main/catplot%20.png?raw=true).
 
+
 sns.pairplot untuk melihat semua grafik fitur numerik,
 ![images](https://github.com/fadlinisasiGit/Images/blob/main/pairplot.png?raw=true).
+
 
 dan  sns.heatmap untuk melihat matrik korelasi fitur numerik.
 ![images](https://github.com/fadlinisasiGit/Images/blob/main/heatmap.png?raw=true).
