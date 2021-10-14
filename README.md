@@ -61,28 +61,60 @@ Berikut adalah keterangan mengenai maksud dari variabel - variabel atau kolom da
 - openesstoexperience: Scores in one of the sections of AMCAT's personality test
 **Note: **Untuk memberi Anda lebih banyak konteks, AMCAT adalah portal pekerjaan.
 
+Dalam Proyek ini, terdapat beberapa bentuk visualisasi data yang diberikan, seperti penggunaan sns.boxplot untuk mengetahui adanya outliers atau data yang berada di luar batas atas dan batas bawah data sehingga bisa diatasi nantinya menggunakan Metode IQR.
+![images](https://github.com/fadlinisasiGit/Images/blob/main/sns%20boxplot%20collegeGPA.png?raw=true).
+
+Selain menggunakan sns.bloxplot, saya juga menggunakan visualisasi data berupa count.plot.
+![images](https://github.com/fadlinisasiGit/Images/blob/main/countplot%20specialization.png?raw=true).
+
+Seperti pada gambar diatas, visualisasi data menunjukkan banyaknya jumlah sampel dan persentase pada fitur kategori Specialization. Ini menunjukkan banyaknya spesialisasi kerja lulusan teknik di India.
+
+Selain itu, saya menggunakan teknik sns.catplot untuk mempertimbangkan Fitur Salary dengan fitur kategorikal, 
+![images](https://github.com/fadlinisasiGit/Images/blob/main/catplot%20.png?raw=true).
+
+sns.pairplot untuk melihat semua grafik fitur numerik,
+![images](https://github.com/fadlinisasiGit/Images/blob/main/pairplot.png?raw=true).
+
+dan  sns.heatmap untuk melihat matrik korelasi fitur numerik.
+![images](https://github.com/fadlinisasiGit/Images/blob/main/heatmap.png?raw=true).
+
+
+Setelah dibuat grafik ini, kita telah mendapat banyak data yang telah di visualisasikan sehingga mempermudah untuk proses analisa data.
+
 ## Data Preparation 
-Pada bagian ini Anda menjelaskan teknik yang digunakan pada tahapan data preparation.
-- Terapkan minimal satu teknik data preparation dan jelaskan proses yang dilakukan.
-- Jelaskan alasan mengapa Anda perlu menerapkan teknik tersebut pada tahap data preparation
+Untuk data preparation, saya menggunakan beberapa teknik yang diperlukan dalam tahapan data preparation, yaitu :
+- **One Hot Encoding fitur kategori :** metode ini dilakukan karena model machine learning akan semakin baik bila data tersebut berupa angka atau biner, bukan kategori/kata-kata, seperti pada gambar di bawah ini. 
+![images](https://miro.medium.com/max/700/1*ggtP4a5YaRx6l09KQaYOnw.png).
+
+- **Reduksi dimensi :** Dengan teknik ini, kita bisa mengurangi jumlah fitur dengan tetap mempertahankan informasi pada data sehingga dapat mengurangi fitur atau kolom yang banyak menjadi lebih sedikit. Seperti pada gambar di bawah ini, saya mereduksi 11 fitur yang berkaitan menjadi 1 fitur bernama AMCATscore. 
+![images](https://github.com/fadlinisasiGit/Images/blob/main/reduksiPCA.png?raw=true).
+
+- **Train Test Split :** Teknik ini membagi dataset menjadi data train dan data test . teknik ini dilakukan untuk mempermudah proses modeling atau membuat model regresi. 
+- **Standarisasi :** Dengan teknik ini dapat membantu untuk membuat fitur data menjadi bentuk yang lebih mudah diolah oleh algoritma.
 
 ## Modeling
-Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan.
+Pada penjelasan sebelumnya, saya menggunakan 3 model machine learning yang saya gunakan untuk mencari solusi, yaitu K-Nearest Neighbor, Random Forest, dan Boosting. Selanjutnya Ketiga model prediksi ini dibuat dengan parameter acak dan telah diuji beberapa kali.
 
-Jelaskan bagaimana Anda melakukan proses modeling dalam proyek. Misalnya, anda menggunakan satu algoritma kemudian melakukan improvement dari baseline model atau anda menggunakan dua atau lebih algoritma kemudian membandingkan performanya.
+Dari hasil prediksi ketiga model ini, saya mendapatkan salah satu model terbaik dan peforma baik yang bisa dijadikan solusi proyek ini. Model prediksi tersebut adalah model K-Nearest Neighbor. Hal ini dikarenakan hasil prediksi K-Nearest Neighbor ini mendekati nilai sebenarnya (Salary atau Gaji) sebagai tujuan proyek ini.
 
-Sajikan model terbauk anda sebagai solusi.
-Jelaskan pula hasil dari model anda (misal, hasil prediksi)
+![images](https://github.com/fadlinisasiGit/Images/blob/main/3%20model%20prediksi.png?raw=true)
 
 ## Evaluation
-Bagian ini menjelaskan mengenai metrik evaluasi yang digunakan untuk mengukur kinerja model. Sebagai contoh, Anda memiih kasus klasifikasi dan menggunakan metrik **akurasi, precision, recall, dan F1 score**. Jelaskan mengenai beberapa hal berikut:
-- Penjelasan mengenai metrik yang digunakan dan bagaimana formulanya
-- Kelebihan dan kekurangan metrik
-- Bagaimana cara menerapkannya ke dalam kode.
+Dalam bagian Evaluasi, karena masalah di proyek ini adalah masalah regresi, maka saya menguji performa model ini dengan metrik evaluasi MSE atau Mean Squared Error.
+MSE didefinisikan dalam persamaan berikut.
+![images](https://github.com/fadlinisasiGit/Images/blob/main/mse.png?raw=true).
 
-Ingatlah, metrik evaluasi yang digunakan harus sesuai dengan konteks data, problem statement, dan solusi yang diinginkan.
+Keterangan : N = jumlah dataset, yi = nilai sebenarnya, y_pred = nilai prediksi
+Berdasarkan [Sumber](https://en.wikipedia.org/wiki/Mean_squared_error), MSE
+mengukur rata - rata kuadrat kesalahan yaitu, selisih kuadrat rata-rata antara nilai taksiran dan nilai sebenarnya. MSE adalah fungsi risiko , sesuai dengan nilai yang diharapkan dari kerugian kesalahan kuadrat. Dalam amalisis regresi, melakukan plotting adalah cara yang lebih alami untuk melihat tren dari keseluruhan data. Rata-rata jarak dari setiap titik ke model regresi yang diprediksi dapat dihitungkan, dan ditampilkan sebagai MSE. Kuadrat sangat penting untuk mengurangi kompleksitas dengan tanda-tanda negatif. Untuk meminimalkan MSE, model bisa lebih akurat, yang berarti model lebih dekat dengan data sebenarnya.  
 
-**---Ini adalah bagian akhir laporan---**
+Jadi, MSE menghitung selisih rata-rata nilai sebenarnya dengan nilai prediksi. Jika prediksi mendekati nilai sebenarnya, maka performa model baik. Jika tidak, performa model buruk.
 
-_Catatan:_
-_Anda dapat menambahkan gambar, kode, atau tabel ke dalam laporan jika diperlukan. Temukan caranya pada contoh dokumen markdown di situs editor [Dillinger](https://dillinger.io/), [Github Guides: Mastering markdown](https://guides.github.com/features/mastering-markdown/), atau sumber lain di internet. Semangat!_
+Sebelum menghitung nilai MSE dalam model, kita perlu melakukan proses scaling fitur numerik pada data test. Kita perlu melakukan scaling terhadap data uji. Hal ini harus dilakukan agar skala antara data train dan data test sama dan kita bisa melakukan evaluasi.
+Untuk proses scaling, masukkan kode berikut : 
+*X_test.loc[:, numerik_fitur] = scaler.transform(X_test[numerik_fitur])*
+Setelah itu ketiga model bisa di evaluasi dengan metrik MSE.
+
+
+## Penutup
+Sekian dari laporan proyek machine learning, predicitive analytics. Terima kasih telah membaca laporan ini. Semoga dapat menjadi manfaat bagi yang membaca laporan ini.
