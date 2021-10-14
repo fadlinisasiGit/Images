@@ -65,6 +65,10 @@ Dalam Proyek ini, terdapat beberapa bentuk visualisasi data yang diberikan, sepe
 ![images](https://github.com/fadlinisasiGit/Images/blob/main/sns%20boxplot%20collegeGPA.png?raw=true).
 
 
+
+
+
+.
 Selain menggunakan sns.bloxplot, saya juga menggunakan visualisasi data berupa count.plot.
 ![images](https://github.com/fadlinisasiGit/Images/blob/main/countplot%20specialization.png?raw=true).
 
