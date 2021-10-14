@@ -83,6 +83,46 @@ sns.pairplot untuk melihat semua grafik fitur numerik,
 ![images](https://github.com/fadlinisasiGit/Images/blob/main/pairplot.png?raw=true).
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 dan  sns.heatmap untuk melihat matrik korelasi fitur numerik.
 ![images](https://github.com/fadlinisasiGit/Images/blob/main/heatmap.png?raw=true).
 
