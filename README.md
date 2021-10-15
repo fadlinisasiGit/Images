@@ -3,8 +3,8 @@
 ## Domain Proyek
 Teknik adalah penggunaan prinsip-prinsip ilmiah untuk merancang dan membangun mesin, struktur, dan barang-barang lainnya, termasuk jembatan, terowongan, jalan, kendaraan, dan bangunan. Disiplin teknik mencakup berbagai bidang teknik yang lebih khusus, masing-masing dengan penekanan yang lebih spesifik pada bidang tertentu matematika terapan, ilmu terapan, dan jenis aplikasi.
 Teknik adalah disiplin yang luas yang sering dipecah menjadi beberapa sub-disiplin. Meskipun seorang insinyur biasanya akan dilatih dalam disiplin tertentu, ia dapat menjadi multi-disiplin melalui pengalaman. Teknik sering dicirikan memiliki empat cabang utama: teknik kimia, teknik sipil, teknik elektro, dan teknik mesin. [Wikipedia](https://en.wikipedia.org/wiki/Engineering).
-India memiliki total 6.214 Institusi Teknik dan Teknologi di mana sekitar 2,9 juta siswa terdaftar. Setiap tahun rata-rata 1,5 juta siswa mendapatkan gelar di bidang teknik, tetapi karena kurangnya keterampilan yang dibutuhkan untuk melakukan pekerjaan teknis, kurang dari 20 persen mendapatkan pekerjaan di domain inti mereka. [BWEDUCATION](http://bweducation.businessworld.in/article/Employability-Of-Engineering-Graduates-In-India-A-Challenge-Needs-To-Address/01-06-2019-171291).
-Pertanyaan yang relevan adalah apa yang menentukan gaji dan pekerjaan yang ditawarkan para insinyur ini setelah lulus. Berbagai faktor seperti nilai perguruan tinggi, keterampilan kandidat, kedekatan perguruan tinggi dengan pusat industri, spesialisasi yang dimiliki, kondisi pasar untuk industri tertentu menentukan hal ini. Berdasarkan berbagai faktor ini, diperlukan solusi dengan cara analisa menggunakan algoritma machine learning untuk mnegatasi pertanyaan ini.
+India memiliki total 6.214 Institusi Teknik dan Teknologi di mana sekitar 2,9 juta siswa terdaftar. Setiap tahun rata-rata 1,5 juta siswa mendapatkan gelar di bidang teknik, tetapi karena kurangnya keterampilan yang dibutuhkan untuk melakukan pekerjaan teknis, kurang dari 20 persen mendapatkan pekerjaan di domain inti mereka. [BWEDUCATION](http://bweducation.businessworld.in/article/Employability-Of-Engineering-Graduates-In-India-A-Challenge-Needs-To-Address/01-06-2019-171291). Dengan berdasarkan fakta diatas, pihak perusahaan kebingungan memberikan gaji untuk lulusan teknik di India sehingga menimbulkan pertanyaan yang relevan berikut.
+Apa yang menentukan gaji dan pekerjaan yang ditawarkan para insinyur ini setelah lulus?. Berbagai faktor seperti nilai perguruan tinggi, keterampilan kandidat, kedekatan perguruan tinggi dengan pusat industri, spesialisasi yang dimiliki, kondisi pasar untuk industri tertentu menentukan hal ini. Berdasarkan berbagai faktor ini, diperlukan solusi dengan cara analisa menggunakan algoritma machine learning untuk mengatasi pertanyaan ini.
 
 ## Business Understanding
 ### Problem Statements
@@ -16,9 +16,9 @@ Membuat prediksi regresi untuk menentukan gaji dan pekerjaan yang ditawarkan par
 ### Solution statements
 Tujuan proyek ini adalah Prediksi gaji lulusan teknik di India agar dapat menjadi pertimbangan suatu perusahaan untuk menentukan gaji karyawan lulusan teknik dan data ini merupakan data regresi. Berikut penjelasan model-model machine learning yang akan digunakan untuk masalah ini :
 
-- **K-Nearest Neighbor :** Algoritma yang relatif sederhana dibandingkan dengan algoritma lain. Algoritma KNN menggunakan 'Kesamaan fitur' untuk memprediksi dari setiap data yang baru. Dengan kata lain, setiap data baru diberi nilai berdasarkan seberapa mirip titik tersebut dalam set pelatihan. 
-- **Random Forest :** Salah satu algoritma supervised learning. Dapat digunakan untuk menyelesaikan masalah klasifikasi dan regresi. Ini juga merupakan algoritma yang sering digunakan karena cukup sederhana tetapi memiliki stabilitas yang mumpuni.
-- **Boosting :** Algoritma ini bekerja dengan membangun model dari data latih. Kemudian membuat model kedua yang bertugas memperbaiki kesalahan model pertama. Model ditambahkan sampai data laatih terprediksi dengan baik atau telah mecapai maksimum model untuk ditambahkan. Algoritma ini bertujuan untuk meningkatkan performa atau akurasi prediksi  dengan menggabungkan beberapa model sederhana dan dianggap lemah (weak learners) sehingga membentuk suatu model yang kuat (strong ensemble learner). 
+- **K-Nearest Neighbor :** Algoritma yang relatif sederhana dibandingkan dengan algoritma lain. Algoritma KNN menggunakan 'Kesamaan fitur' untuk memprediksi dari setiap data yang baru. Dengan kata lain, setiap data baru diberi nilai berdasarkan seberapa mirip titik tersebut dalam set pelatihan. Algoritma ini memiliki kelebihan, yaitu sangat cocok untuk model non liniear, mudah dipahami dan diimplementasikan, tangguh terhadap data training sample yang besar, dan memiliki konsistensi yang kuat dalam menjamin error rate. Namun, algoritma ini memiliki kekurangan, yaitu perlu menentukan parameter k (jumlah tetangga terdekat), tidak menangani missing value secara implisit, sensitif terhadap outlier, rentan terhadap variabel yang non informatif, rentan terhadap perbedaan rentang variabel, dll.
+- **Random Forest :** Salah satu algoritma supervised learning. Dapat digunakan untuk menyelesaikan masalah klasifikasi dan regresi. Random forest merupakan suatu kumpulan dari beberapa tree, dimana masing-masing tree bergantung pada nilai piksel pada tiap vector yang diambil secara acak dan independen. Kelebihan algoritma ini, yaitu dapat mengatasi noise dan missing value serta dapat mengatasi data dalam jumlah yang besar. Kekurangan algoritma ini, yaitu interpretasi yang sulit dan membutuhkan tuning model yang tepat untuk data.
+- **Boosting :** Algoritma ini merupakan salah satu dari teknik ensemble untuk menghasilkan beberapa model atau penggolongan untuk prediksi atau klasifikasi, dan juga menggabungkan prediksi dari berbagai model ke dalam prediksi tunggal. Boosting adalah pendekatan iteratif untuk menghasilkan pengklasifikasi yang kuat, yang mampu mencapai kesalahan training seminimal mungkin dari sekelompok pengklasifikasi yang lemah, yang masing-masing hampir tidak dapat melakukan lebih baik daripada tebakan acak. Kelebihan dari algoritma ini adalah mampu meningkatkan akurasi model dan bekerja di sebagian besar kasus. Kekurangan algoritma ini adalah Memakan waktu dan dengan demikian mungkin bukan ide terbaik untuk aplikasi real-time, dan pemilihan model untuk menciptakan ensemble adalah seni yang benar-benar sulit untuk dikuasai.  
 
 
 ## Data Understanding
@@ -44,21 +44,21 @@ Berikut adalah keterangan mengenai maksud dari variabel - variabel atau kolom da
 - CollegeState: Nama negara bagian di mana perguruan tinggi berada
 - GraduationYear: Tahun kelulusan (gelar Sarjana)
 - English : Skor di bagian Bahasa Inggris AMCAT
-- Logical: Score in AMCAT Logical ability section
-- Quant: Score in AMCAT's Quantitative ability section
-- Domain: Scores in AMCAT's domain module
-- ComputerProgramming: Score in AMCAT's Computer programming section
-- ElectronicsAndSemicon: Score in AMCAT's Electronics & Semiconductor Engineering section
-- ComputerScience: Score in AMCAT's Computer Science section
-- MechanicalEngg: Score in AMCAT's Mechanical Engineering section
-- ElectricalEngg: Score in AMCAT's Electrical Engineering section
-- TelecomEngg: Score in AMCAT's Telecommunication Engineering section
-- CivilEngg: Score in AMCAT's Civil Engineering section
-- conscientiousness: Scores in one of the sections of AMCAT's personality test
-- agreeableness: Scores in one of the sections of AMCAT's personality test
-- extraversion: Scores in one of the sections of AMCAT's personality test
-- nueroticism: Scores in one of the sections of AMCAT's personality test
-- openesstoexperience: Scores in one of the sections of AMCAT's personality test
+- Logical: Skor di bagian Kemampuan logis AMCAT
+- Quant: Skor di bagian kemampuan Kuantitatif AMCAT
+- Domain: Skor di bagian kemampuan Kuantitatif AMCAT
+- ComputerProgramming: Skor di bagian Pemrograman Komputer AMCAT
+- ElectronicsAndSemicon: Skor di bagian Teknik Elektronik & Semikonduktor AMCAT
+- ComputerScience: Skor di bagian Ilmu Komputer AMCAT
+- MechanicalEngg: Skor di bagian Teknik Mesin AMCAT
+- ElectricalEngg: Skor di bagian Teknik Elektro AMCAT
+- TelecomEngg:Skor di bagian Teknik Telekomunikasi AMCAT
+- CivilEngg: Skor di bagian Teknik Sipil AMCAT
+- conscientiousness: Skor di salah satu bagian dari tes kepribadian AMCAT
+- agreeableness: Skor di salah satu bagian dari tes kepribadian AMCAT
+- extraversion: Skor di salah satu bagian dari tes kepribadian AMCAT
+- nueroticism: Skor di salah satu bagian dari tes kepribadian AMCAT
+- openesstoexperience: Skor di salah satu bagian dari tes kepribadian AMCAT
 **Note: **Untuk memberi Anda lebih banyak konteks, AMCAT adalah portal pekerjaan.
 
 Dalam Proyek ini, terdapat beberapa bentuk visualisasi data yang diberikan, seperti penggunaan sns.boxplot untuk mengetahui adanya outliers atau data yang berada di luar batas atas dan batas bawah data sehingga bisa diatasi nantinya menggunakan Metode IQR.
@@ -95,6 +95,20 @@ dan  sns.heatmap untuk melihat matrik korelasi fitur numerik.
 Setelah dibuat grafik ini, kita telah mendapat banyak data yang telah di visualisasikan sehingga mempermudah untuk proses analisa data.
 
 ## Data Preparation 
+Ada beberapa langkah yang harus dilakukan sebelum melakukan tahapan pada data preparation, yaitu :
+- Men-drop fitur yang tidak digunakan : langkah ini dilakukan untuk meminimalisasi kolom yang terlihat berlebihan dan tidak berpengaruh besat dengan tujuan proyek ini, seperti kolom 'ID', 'DOB', '10board', '12board', 'CollegeID', 'CollegeTier', '10percentage',    '12graduation', '12percentage', 'CollegeCityID', 'CollegeCityTier', 'GraduationYear', dan 'Degree'. Cara untuk melakukan drop tersebut adalah dengan perintah berikut.
+*sal.drop(['ID', 'DOB', '10board', '12board', 'CollegeID', 'CollegeTier', '10percentage', '12graduation', '12percentage', 'CollegeCityID', 'CollegeCityTier',
+'GraduationYear', 'Degree'], axis='columns', inplace=True)*
+- Memeriksa missing value : missing value ini adalah hilangnya beberapa data yang telah diperoleh dalam arti data yang tidak berguna dan harus di hilangkan. Untuk memeriksa missing values, ketik perintah berikut.
+*sal.isnull().sum()*
+- Memeriksa outlier dengan metode IQR : Untuk memeriksa outlier dapat dilakukan dengan mengetik perintah berikut.
+*sns.boxplot(x=sal['collegeGPA'])*.
+(Ini akan menampilkan sebuah plot box dimana akan terlihat beberapa titik yang berada di luar range data fitur tersebut. Untuk mengatasi outlier ini, saya menggunakan metode IQR  interquartile range) atau rentang akar kuartil dari sekumpulan data. IQR digunakan dalam analisis statistik untuk membantu menarik kesimpulan mengenai sekumpulan data. Untuk menggunakan metode IQR ini, ketik perintah berikut.
+*Q1 = sal.quantile(0.25)
+Q3 = sal.quantile(0.75)
+IQR=Q3-Q1
+sal=sal[~((sal<(Q1-1.5*IQR))|(sal>(Q3+1.5*IQR))).any(axis=1)]*
+
 Untuk data preparation, saya menggunakan beberapa teknik yang diperlukan dalam tahapan data preparation, yaitu :
 - **One Hot Encoding fitur kategori :** metode ini dilakukan karena model machine learning akan semakin baik bila data tersebut berupa angka atau biner, bukan kategori/kata-kata, seperti pada gambar di bawah ini. 
 ![images](https://miro.medium.com/max/700/1*ggtP4a5YaRx6l09KQaYOnw.png).
